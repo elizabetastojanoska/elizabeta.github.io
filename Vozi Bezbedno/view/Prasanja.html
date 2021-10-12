@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прашања од тестови</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <style>
+       .prasanja{
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            width:80%;
+            height:50px;
+        }
+
+        #a1,#a2,#a3,#a4,#a5{
+            background-color:darkslategray;
+            color:white;
+            padding:10px;
+            cursor:pointer;
+        }
+        #tekst1,#tekst2,#tekst3,#tekst4,#tekst5{
+            background-color: darkgray;
+            display:none;
+            color:black;
+            padding:10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-end">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="../uploads/logo.png" alt="logo" width="30px" height="30px">
+                <h1 class="navbar-brand text-white">Вози Безбедно!</h1>
+            </a>
+           
+        <ul class="navbar-nav text-white">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">Почетна</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Raskrsnici.html">Раскрсници</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Prasanja.html">Прашања</a>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <br> <br>
+
+        <h1>Прашања и одговори од тестови за возачка дозвола</h1>
+    <div id="container" class="prasanja">
+        <div id="a1">+ 1. Употреба на светлата на возилото во сообраќај на пат задолжителна е:</div>
+        <div id="tekst1">- Дење и ноќе</div>
+        <div id="a2">+ 2. Возилата не смеат на предната страна да имаат светлосни или светлосно-сигнални уреди што даваат светлост во:</div>
+        <div id="tekst2">- Црвена боја</div>
+        <div id="a3">+ 3. Лице кое ќе се затекне или ќе наиде на сообраќајна незгода во која има повредени лица, има обврска:</div>
+        <div id="tekst3">- Да им укаже помош на повредените лица</div>
+        <div id="a4">+ 4. Стоп светлата на задната страна на моторното возило се активираат при употреба на:</div>
+        <div id="tekst4">- Работната сопирачка на возилото</div>
+        <div id="a5">+ 5. Доколку при движење со возилото, на пат забележите лице кое го поправа своето возило, потребно е:</div>
+        <div id="tekst5">- Да застанете и да понудите помош</div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#a1").click(function(){
+                $("#tekst1").slideToggle("slow");
+            });
+
+            $("#a2").click(function(){
+                $("#tekst2").slideToggle("slow");
+            });
+            $("#a3").click(function(){
+                $("#tekst3").slideToggle("slow");
+            });
+            $("#a4").click(function(){
+                $("#tekst4").slideToggle("slow");
+            });
+            $("#a5").click(function(){
+                $("#tekst5").slideToggle("slow");
+            });
+        });
+    </script>
+</body>
+</html>

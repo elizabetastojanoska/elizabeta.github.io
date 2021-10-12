@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <style>
+        
+        .text  {
+            padding-bottom: 200px;
+            font-size: 60px;
+            font-weight: bold; 
+            animation:ease;   
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-end">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="uploads/logo.png" alt="logo" width="30px" height="30px">
+                <h1 class="navbar-brand text-white">Вози Безбедно!</h1>
+            </a>
+           
+        <ul class="navbar-nav text-white">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Почетна</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="view/Raskrsnici.html">Раскрсници</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="view/Prasanja.html">Прашања</a>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="uploads/soobrakaj3.jpg" alt="Soobrakaj" width="100%" height="550px">
+                <div class="carousel-caption">
+                    <p class="text">Научи ги правилата во сообраќајот</p>
+                    <a href="view/Raskrsnici.html"><button class="btn btn-primary">Дознај повеќе</button></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="uploads/soobrakaj.jpg" alt="Soobrakaj" width="100%" height="550px">
+              </div>
+              <div class="carousel-item">
+                <img src="uploads/soobrakaj2.jpg" alt="Soobrakaj" width="100%" height="550px">
+              </div>
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          
+          </div>
+    
+</body>
+</html>

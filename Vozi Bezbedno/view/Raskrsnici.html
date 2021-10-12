@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раскрсници</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <style>
+        #raskrsnica{
+            position: relative;
+        }
+        #redcar{
+            position: absolute;
+            left: 150px;
+            top: 410px;
+        }
+        #browncar{
+            position: absolute;
+            left:280px;
+            top:250px;
+        }
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-end">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="../uploads/logo.png" alt="logo" width="30px" height="30px">
+                <h1 class="navbar-brand text-white">Вози Безбедно!</h1>
+            </a>
+           
+        <ul class="navbar-nav text-white">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">Почетна</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Raskrsnici.html">Раскрсници</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Prasanja.html">Прашања</a>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <br>
+
+        <div class="container">
+            <h2>1. Кое возило на сликата е со првенство на минување?</h2>
+            <img src="../uploads/raskrsnica.png" alt="raskrsnica" id="raskrsnica">
+            <img src="../uploads/crvenovozilo.png" alt="crveno vozilo" width="250px" height="100px" id="redcar">
+            <img src="../uploads/browncar.png" alt="kafeavo vozilo" width="150px" height="100px" id="browncar">
+            <br>
+            <input type="radio" id="prv" name="redcar" value="red">
+            <label for="prv">а) Црвеното возило</label><br>
+            <input type="radio" id="vtor" name="redcar" value="brown">
+            <label for="vtor">б) Кафеавото возило</label><br>
+            <button class="btn btn-primary" onclick="odgovor()">Потврди</button>
+            <button class="btn btn-primary" onclick="animacija()">Погледни одговор</button>
+            <br><br>
+            <div id="tocen" class="hide alert alert-success alert.dismissible ">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Вашиот одговор е точен!</div>
+        </div>
+
+        <script>
+            function odgovor(){
+                if(document.getElementById("prv").checked){
+                 var blok=document.getElementById("tocen").style.display="block";
+                }       
+
+                if(document.getElementById("vtor").checked){
+                    alert("Вашиот одговор е погрешен!");
+                }
+            }
+
+            function animacija(){
+            var id = null;   
+            var elem = document.getElementById("redcar");   
+            var pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 10);
+             function frame() {
+                if (pos == 760) {
+                 clearInterval(id);
+             } else {
+                pos++; 
+                elem.style.left = pos + 'px'; 
+                elem.style.bottom = pos + 'px'; 
+    }
+  }
+}
+            
+
+        </script>
+</body>
+</html>
