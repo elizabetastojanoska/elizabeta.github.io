@@ -1,0 +1,36 @@
+
+<div class="bg-info">
+<h2 class="text-light" style="text-align:center; padding-top:15px; font-family:arial;">Нашите производи</h2>
+
+<div id="search" style="text-align:center;">
+			<input class="btn btn-light" type="text" placeholder="Пребарај по име"
+			name="searchByName"7747 id="searchByName" ng-model="searchByName">
+			<input class="btn btn-light" type="text" placeholder="Пребарај по цена"
+			name="searchByPrice" id="searchByPrice" ng-model="searchByPrice">
+			<input class="btn btn-light" type="text" placeholder="Пребарај по опис"
+			name="searchByOpis" id="searchByOpis" ng-model="searchByOpis">
+		<select class="btn btn-light" name="searchByCategory" id="searchByCategory" ng-model="searchByCategory">
+		<option value="">Сите категории</option>
+		<option ng-repeat="kategorii in kategorii" value="{{kategorii.kategorija_id}}">{{kategorii.kategorija_ime}}</option></select>
+</div><br>
+	<div class="container bg-white">
+	<div class="row" style="padding:15px;">
+	<div class="col-lg-3" ng-repeat="proizvodi in proizvodi | 
+	filter:{proizvod_ime:searchByName,proizvod_cena:searchByPrice,proizvod_opis:searchByOpis,kategorija_id:searchByCategory}">
+	<div class="card" style="height:600px;">
+  <img class="card-img-top" src="uploads/{{proizvodi.proizvod_img}}" alt="Card image" width="25%" height="300px">
+  <div class="card-body">
+    <h4 class="card-title">{{proizvodi.proizvod_ime}}</h4>
+    <p class="card-text"><b>Опис:</b> {{proizvodi.proizvod_opis}}; <br>
+	<b>Попуст:</b> {{proizvodi.proizvod_popust}} ден.<br>
+	<b>Цена со попуст:</b> {{proizvodi.proizvod_cena}} ден.<br>
+	<b>Залиха на производ:</b> {{proizvodi.proizvod_zaliha}}
+	</p>
+	
+  </div>
+  <div class="card-footer"><a href="#!details_naracki" class="btn btn-primary w-100">Купи</a></div>
+</div><!--Card-->
+	</div><!--col-sm-3-->
+	</div><!--/row-->
+</div><!--/container-->
+</div>

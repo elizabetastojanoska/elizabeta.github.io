@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <title>Јупитер</title>
+  <style>
+#naslov{
+  text-align: center;
+  font-size:40px;
+  font-family: sans-serif;
+  color:white;
+}
+
+    #container{
+      text-align: center;
+  }
+  #pozadina img{
+      width:80%;
+      height:80%;
+    
+  }
+  #sliki{
+      display:inline-block;
+      background-color:rgba(0, 0, 0, 0.479);
+      width:90%;
+      
+  }
+  #sliki img{
+      width:150px;
+      height:100px;
+      padding:15px;
+      cursor:pointer;
+      opacity:0.5;
+      
+  }
+  #sliki img:hover{
+      opacity:1;
+      
+  }
+  #juptekst{
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color:white;
+    width:80%;
+    text-align: center;
+    margin-left:120px;
+  }
+  </style>
+</head>
+<body style="background-color: black;">
+    <div id="navigacija">
+        <h1>Сончев Систем</h1>
+    <nav role="navigation">
+        <ul>
+        <li><a href="../index.html">Почетна</a></li>
+          <li><a href="sonce.html">Сонце</a></li>
+          <li><a href="#">Планети</a>
+            <ul class="dropdown">
+              <li><a href="merkur.html">Меркур</a></li>
+              <li><a href="venera.html">Венера</a></li>
+              <li><a href="zemja.html">Земја</a></li>
+              <li><a href="mars.html">Марс</a></li>
+              <li><a href="jupiter.html">Јупитер</a></li>
+            </ul>
+          </li>
+          <li><a href="dzvezdi.html">Ѕвезди</a></li>
+          <li><a href="mesecina.html">Месечина</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="naslov">
+      <h1>Јупитер</h1>
+    </div>
+    <div id="container">
+   
+      <div id="pozadina">
+          <img id="golema" src="../uploads/jup2.jpg">
+      </div>
+      
+      <div id="sliki">
+          <img src="../uploads/jup2.jpg" onclick="menuvaj(this)">
+          <img src="../uploads/jup1.jpg" onclick="menuvaj(this)">
+          <img src="../uploads/jup3.jpg" onclick="menuvaj(this)">
+          <img src="../uploads/jup4.jpg" onclick="menuvaj(this)">
+          <img src="../uploads/jup5.jpg" onclick="menuvaj(this)">
+      </div>
+  </div>
+
+  <div id="juptekst">
+    <p>
+      Јупитер е петтата планета од Сонцето и најголема во Сончевиот Систем. 
+      Таа е гигант планета со маса една илјадитина од Сонцето, и 2.5 пати потешка од останатите планети во сончевиот систем заедно. 
+      Јупитер и Сатурн се гасовити џинови; другите две гигантски планети, Уран и Нептун, се ледени џинови. <br>
+      Јупитер им бил бознат на астрономите уште од антиката. Именувана е по Римскиот бог Јупитер.<br>
+       Гледано од Земјата, Јупитер достигнува магнитуда од -2,94, доволно светла за нејзината рефлексија да фрла сенка,
+        правејќи го во просек третиот најсветол природен објект на ноќното небо по Месечината и Венера.
+    </p>
+  </div>
+  <script>
+      function menuvaj(mala){
+          var a=document.getElementById("golema");
+          a.src=mala.src;
+      }
+  </script>
+</body>
+</html>

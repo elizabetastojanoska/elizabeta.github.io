@@ -1,0 +1,59 @@
+<h3>Нов клиент</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Успешно внесовте клиент
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+<form name="myForm">
+	<div class="form-group">
+	<label for="klient_ime">Име:</label>
+	<input type="text" class="form-control" placeholder="Име"
+	name="klient_ime" id="klient_ime" ng-model="klienti[checkUrl].klient_ime"></input>
+	</div>
+	<input type="hidden" class="form-control" name="klient_id" id="klient_id" ng-model="klienti[checkUrl].klient_id">
+	<div class="form-group">
+	<label for="klient_prezime">Презиме:</label>
+	<input type="text" class="form-control" placeholder="Презиме"
+	name="klient_prezime" id="klient_prezime" ng-model="klienti[checkUrl].klient_prezime"></input>
+	</div>
+	<div class="form-group">
+	<label for="klient_grad">Град:</label>
+	<input type="text" class="form-control" placeholder="Град"
+	name="klient_grad" id="klient_grad" ng-model="klienti[checkUrl].klient_grad"></input>
+	</div>
+	<div class="form-group">
+	<label for="klient_adresa">Адреса:</label>
+	<input type="text" class="form-control" placeholder="Адреса"
+	name="klient_adresa" id="klient_adresa" ng-model="klienti[checkUrl].klient_adresa"></input>
+	</div>
+	<div class="form-group">
+	<label for="klient_tel_br">Телефонски број:</label>
+	<input type="text" class="form-control" placeholder="Телефонски број"
+	name="klient_tel_br" id="klient_tel_br" ng-model="klienti[checkUrl].klient_tel_br"></input>
+	</div>
+	<div class="form-group">
+	<label for="klient_email">Email:</label>
+	<input type="text" class="form-control" placeholder="Email"
+	name="klient_email" id="klient_email" ng-model="klienti[checkUrl].klient_email"></input>
+	</div>
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+	ng-click="(myForm.klient_ime.$valid)? 
+	function_details_klienti(klienti[checkUrl].klient_ime,klienti[checkUrl].klient_prezime,klienti[checkUrl].klient_grad,
+	klienti[checkUrl].klient_adresa,klienti[checkUrl].klient_tel_br,klienti[checkUrl].klient_email,klienti[checkUrl].klient_id,'insert'):function_error()">SAVE</button>
+	
+	</div>
+	<div class="form-group">
+    <button ng-show="checkUrl!==undefined" class="btn btn-primary"
+	ng-click="(myForm.klient_ime.$valid)? 
+	function_details_klienti(klienti[checkUrl].klient_ime,klienti[checkUrl].klient_prezime,klienti[checkUrl].klient_grad,
+	klienti[checkUrl].klient_adresa,klienti[checkUrl].klient_tel_br,klienti[checkUrl].klient_email,klienti[checkUrl].klient_id,'update'):function_error()">EDIT</button>
+	
+	</div>
+	
+	
+	
+</form>

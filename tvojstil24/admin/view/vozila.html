@@ -1,0 +1,71 @@
+<h3>Возила</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!--<th>pozicija</th>-->
+			<th><input type="text" placeholder="Vozilo ID"
+			name="searchByVoziloID" id="searchByVoziloID" ng-model="searchByVoziloID"></th>
+			<th><input type="text" placeholder="registarski tabli"
+			name="searchByTabli" id="searchByTabli" ng-model="searchByTabli"></th>
+			<th><input type="text" placeholder="marka"
+			name="searchByMarka" id="searchByMarka" ng-model="searchByMarka"></th>
+			<th><input type="text" placeholder="model"
+			name="searchByModel" id="searchByModel" ng-model="searchByModel"></th>
+			<th><input type="text" placeholder="boja"
+			name="searchByBoja" id="searchByBoja" ng-model="searchByBoja"></th>
+			<th><input type="text" placeholder="vozac"
+			name="searchByVozac" id="searchByVozac" ng-model="searchByVozac"></th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="vozila in vozila |filter:{vozilo_id:searchByVoziloID,reg_tabli:searchByTabli,marka:searchByMarka, model:searchByModel,
+													boja:searchByBoja,vozac:searchByVozac}">
+			<!--<td>{{$index}}</td>-->
+			<td>{{vozila.vozilo_id}}</td>
+			<td>{{vozila.reg_tabli}}</td>
+			<td>{{vozila.marka}}</td>
+			<td>{{vozila.model}}</td>
+			<td>{{vozila.boja}}</td>
+			<td>{{vozila.vozac}}</td>
+			<td><a href="#!details_vozila/{{$index}}"><i class="fa fa-edit"></i></a></td>
+			<td><button type="button" title="izbrisi"
+			class="btn btn-danger"
+			ng-click="function_getId($index)"
+			data-toggle="modal" 
+			data-target="#myModal">
+			<i class="fa fa-trash"></i></button></td>
+		</tr>
+		
+	</tbody>
+</table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger">
+        <h4 class="modal-title">Избриши возило</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       Дали сте сигурни дека сакате да го избришете возилото {{vozila[getId].vozilo_id}}  {{vozila[getId].reg_tabli}}?
+ 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="button" class="btn btn-danger" 
+		
+		ng-click="function_deleteRow('vozila',vozila[getId].vozilo_id)">DELETE</button>
+        <button type="button" class="btn btn-warning" 
+		data-dismiss="modal">CANCEL</button>
+      </div>
+
+    </div>
+  </div>
+</div>

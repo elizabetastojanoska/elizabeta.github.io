@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <script src="../assets/js/jquery3.5.1.js"></script>
+    <title>Меркур</title>
+    <style>
+      #n1{
+        text-align:center;
+        font-family: sans-serif;
+        font-size: 70px;
+        color:rgb(214, 176, 69);
+      }
+
+      #tekstmer {
+        line-height: 1.5;
+        text-align: center;
+        color:rgb(214, 176, 69);
+        font-family: sans-serif;
+        font-size: 16px;
+        padding:20px;
+        margin-top:-65px;
+        background-color: black;
+        cursor:pointer;
+      }
+      #more {
+        font-size:20px;
+        font-weight: bold;
+      }
+      #tekstzamerkur {
+            display:none;
+            cursor:auto;
+        }
+    </style>
+</head>
+<body style="background-color:black;">
+    <div id="navigacija">
+        <h1>Сончев Систем</h1>
+    <nav role="navigation">
+        <ul>
+        <li><a href="../index.html">Почетна</a></li>
+          <li><a href="sonce.html">Сонце</a></li>
+          <li><a href="#">Планети</a>
+            <ul class="dropdown">
+              <li><a href="merkur.html">Меркур</a></li>
+              <li><a href="venera.html">Венера</a></li>
+              <li><a href="zemja.html">Земја</a></li>
+              <li><a href="mars.html">Марс</a></li>
+              <li><a href="jupiter.html">Јупитер</a></li>
+            </ul>
+          </li>
+          <li><a href="dzvezdi.html">Ѕвезди</a></li>
+          <li><a href="mesecina.html">Месечина</a></li>
+        </ul>
+      </nav>
+    </div><br><br><br>
+
+    <h1 id="n1">Меркур</h1>
+    
+    <div>
+      <img src="../uploads/half-merkur.jpg" alt="merkur" width="100%" height="80%">
+    </div>
+
+    <div id="tekstmer">
+      <div id="more">Прочитај повеќе за планетата Меркур</div>
+      <p id="tekstzamerkur">
+        Меркур — најмалата и најблиската планета до Сонцето од осумте планети во Сончевиот Систем,
+         со орбитален период од околу 88 Земјени денови. Гледана од Земјата, наликува како да се движи во својата орбита за околу 116 денови,
+          што е многу побрзо од другите планети во Сончевиот Систем. Нема познати природни сателити. Планетата е именувана според римското божество
+           Меркур, гласникот на боговите. <br>
+
+        Бидејќи скоро и да нема присуство на атмосфера која би ја задржувала топлината, Меркуровата површина ги има најголемите температурни 
+        промени во Сончевиот Систем, промена кпја се движи од 100 K (−173 °C; −280 °F) во ноќта па сè до 700 K (427 °C; 800 °F) за време на 
+        денот во некои екваторски области. Половите се постојано на температура под 180 K (−93 °C; −136 °F). Меркуровата оска го има најмалиот 
+        наклон од сите планети во Сончевиот Систем (околу  1⁄30 од степенот), но пак затоа го има најголемиот орбитален екцентрицитет. 
+        Во афел, Меркур е на растојание 1,5 пати поголемо од растојанието кога е во перихел. 
+        Меркуровата површина е ишарана со кратери и е слична со онаа на Месечината, што укажува дека истата не била геолошки активна 
+        со милијарди години.
+      </p>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+          $("#more").click(function(){
+              $("#tekstzamerkur").slideToggle("slow");
+          });
+
+      });
+  </script>
+</body>
+</html>

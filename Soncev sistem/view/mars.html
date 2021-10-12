@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <title>Марс</title>
+    <style>
+      #pozadina{
+        z-index:-1;
+        
+      }
+     
+    
+      #curiosity{
+            
+          position:relative;
+           z-index:2;
+           margin-top:-37%;
+      }
+
+      #naslov{
+        text-align: right;
+        margin-top:-38%;
+        margin-right: 350px;
+        font-size: 65px;
+        color:rgb(235, 120, 67);
+        font-family: sans-serif;
+      }
+
+      #text {
+        color:black;
+        font-size: 18px;
+        line-height: 1;
+        font-family: sans-serif;
+        text-align: center;
+        position: relative;
+        padding:2px;
+        width:90%;
+        height:100%;
+        background-color: rgba(165, 42, 42, 0.534);
+        opacity: 1;
+        margin-top: 45%;
+        margin-left: 80px;
+      }
+     
+    </style>
+    <script src="../assets/js/jquery3.5.1.js"></script>
+    <script>
+      $(document).keydown(function(e){
+   switch (e.which){
+   case 37:    //levo
+       $("#curiosity").finish().animate({
+           left: "-=50"
+       });
+       break;
+   case 38:    //gore
+       $("#curiosity").finish().animate({
+           top: "-=50"
+       });
+       break;
+   case 39:    //desno
+       $("#curiosity").finish().animate({
+           left: "+=50"
+       });
+       break;
+   case 40:    //dolu
+       $("#curiosity").finish().animate({
+           top: "+=50"
+       });
+       break;
+   }
+});
+   </script>
+</head>
+<body style="background-color: black;">
+    <div id="navigacija">
+        <h1>Сончев Систем</h1>
+    <nav role="navigation">
+        <ul>
+        <li><a href="../index.html">Почетна</a></li>
+          <li><a href="sonce.html">Сонце</a></li>
+          <li><a href="#">Планети</a>
+            <ul class="dropdown">
+              <li><a href="merkur.html">Меркур</a></li>
+              <li><a href="venera.html">Венера</a></li>
+              <li><a href="zemja.html">Земја</a></li>
+              <li><a href="mars.html">Марс</a></li>
+              <li><a href="jupiter.html">Јупитер</a></li>
+            </ul>
+          </li>
+          <li><a href="dzvezdi.html">Ѕвезди</a></li>
+          <li><a href="mesecina.html">Месечина</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="pozadina">
+      <img src="../uploads/marsplanet.jpg" alt="mars" width="100%" height="100%">
+    </div>
+    <div id="curiosity">
+      <img src="../uploads/curiosity.png" alt="curiosity" width="10%" height="10%">
+    </div>
+
+    <h1 id="naslov">Марс</h1>
+
+    <div id="text">
+      <p>Марс е четвртата планета од Сонцето со просечна оддалеченост од 227.940.000 км (1,52 АЕ). 
+        Нејзиниот пречник изнесува 6.794 км (речиси двојно помал од тој на Земјата), 
+        со што, според големината, таа е седмата планета во Сончевиот Систем.</p>
+      <p>
+      Кјуриосити е ровер Марс со големина на автомобил дизајниран да го истражува кратерот Гајл на Марс како дел од мисијата на НАСА за Марс наука (MSL). 
+      Беше лансирана од Кејп Канаверал на 26 ноември 2011 година, во 15:02 часот UTC и слета на Аеолис Палус во внатрешноста на Гејл на Марс на 6 август 2012 година, 05:17 часот UTC. 
+    </p>
+  </div>
+    
+</body>
+</html>

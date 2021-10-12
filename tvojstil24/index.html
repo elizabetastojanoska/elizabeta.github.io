@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Твој Стил 24</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Bootstrap 4 Framework-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+	<!--AngularJS Framework-->
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/angular-route.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/routes.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+		#logo {
+			margin:0;
+			padiing:0;
+		}
+		.nav-item{
+			font-family:arial;
+			font-weight:bold;
+			padding-top:23px;
+		}
+		
+	</style>
+	
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<header>
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+  <li>
+      <a href="#!za_nas"><img id="logo" src="uploads/tvojstil24.png" alt="tvojstil24" width="100px" height="50px;"></a>
+    </li>
+   
+	<li class="nav-item">
+      <a class="nav-link" href="#!proizvodi">Производи</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#!details_klienti">Регистрирај се</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="#!vozila">Возен парк</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" href="#!kontakt">Контакт</a>
+    </li>
+
+  </ul>
+
+</nav>
+</header>
+
+<ng-view></ng-view>
+
+<footer>
+</footer>
+</body>
+</html>

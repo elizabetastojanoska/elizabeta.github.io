@@ -1,0 +1,76 @@
+<h3>Производи</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!--<th>pozicija</th>-->
+			<th><input type="text" placeholder="product id"
+			name="searchByID" id="searchByID" ng-model="searchByID"></th>
+			<th><input type="text" placeholder="ime na proizvod"
+			name="searchByName" id="searchByName" ng-model="searchByName"></th>
+			<th><input type="text" placeholder="cena"
+			name="searchByPrice" id="searchByPrice" ng-model="searchByPrice"></th>
+			<th>Слика</th>
+			<th><input type="text" placeholder="opis"
+			name="searchByOpis" id="searchByOpis" ng-model="searchByOpis"></th>
+			<th><input type="text" placeholder="popust"
+			name="searchByPopust" id="searchByPopust" ng-model="searchByPopust"></th>
+			<th><input type="text" placeholder="zaliha"
+			name="searchByZaliha" id="searchByZaliha" ng-model="searchByZaliha"></th>
+			<th><input type="text" placeholder="kategorija id"
+			name="searchByKID" id="searchByKID" ng-model="searchByKID"></th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="proizvodi in proizvodi |filter:{proizvod_id:searchByID,proizvod_ime:searchByName, proizvod_cena:searchByPrice,
+												proizvod_opis:searchByOpis, proizvod_popust:searchByPopust, prozvod_zaliha:searchByZaliha, kategorija_id:searchByKID}">
+			<!--<td>{{$index}}</td>-->
+			<td>{{proizvodi.proizvod_id}}</td>
+			<td>{{proizvodi.proizvod_ime}}</td>
+			<td>{{proizvodi.proizvod_cena}}</td>
+			<td><img style="width:30px; height:30px;" src="../uploads/{{proizvodi.proizvod_img}}" alt="{{proizvodi.proizvod_img}}"></td>
+			<td>{{proizvodi.proizvod_opis}}</td>
+			<td>{{proizvodi.proizvod_popust}}</td>
+			<td>{{proizvodi.proizvod_zaliha}}</td>
+			<td>{{proizvodi.kategorija_id}}</td>
+			<td><a href="#!details_proizvodi/{{$index}}"><i class="fa fa-edit"></i></a></td>
+			<td><button type="button" title="izbrisi"
+			class="btn btn-danger"
+			ng-click="function_getId($index)"
+			data-toggle="modal" 
+			data-target="#myModal">
+			<i class="fa fa-trash"></i></button></td>
+		</tr>
+		
+	</tbody>
+</table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger">
+        <h4 class="modal-title">Избриши производ</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       Дали сте сигурни дека сакате да избришете {{proizvodi[getId].proizvod_ime}}  ?
+ 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="button" class="btn btn-danger" 
+		
+		ng-click="function_deleteRow('proizvodi',proizvodi[getId].proizvod_id)">DELETE</button>
+        <button type="button" class="btn btn-warning" 
+		data-dismiss="modal">CANCEL</button>
+      </div>
+
+    </div>
+  </div>
+</div>

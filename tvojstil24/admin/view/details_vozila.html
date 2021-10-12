@@ -1,0 +1,60 @@
+<h3>Ново возило</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Успешно внесовте возило
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+<form name="myForm">
+	<div class="form-group">
+	<label for="reg_tabli">Регистарски табли:</label>
+	<input type="text" class="form-control" placeholder="регистарски табли"
+	name="reg_tabli" id="reg_tabli" ng-model="vozila[checkUrl].reg_tabli"></input>
+	</div>
+	<input type="hidden" class="form-control" name="vozilo_id" id="vozilo_id" ng-model="naracki[checkUrl].vozilo_id">
+	<div class="form-group">
+	<label for="marka">Марка на возило:</label>
+	<input type="text" class="form-control" placeholder="марка"
+	name="marka" id="marka" ng-model="vozila[checkUrl].marka"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="model">Модел на возило:</label>
+	<input type="text" class="form-control" placeholder="модел"
+	name="model" id="model" ng-model="vozila[checkUrl].model"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="boja">Боја на возило:</label>
+	<input type="text" class="form-control" placeholder="боја"
+	name="boja" id="boja" ng-model="vozila[checkUrl].boja"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="vozac">Возач:</label>
+	<input type="text" class="form-control" placeholder="возач"
+	name="vozac" id="vozac" ng-model="vozila[checkUrl].vozac"></input>
+	</div>
+	
+	
+	
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+	ng-click="(myForm.reg_tabli.$valid)? 
+	function_details_vozila(vozila[checkUrl].reg_tabli,vozila[checkUrl].marka,vozila[checkUrl].model,vozila[checkUrl].boja,
+	vozila[checkUrl].vozac,vozila[checkUrl].vozilo_id,'insert'):function_error()">SAVE</button>
+	
+	</div>
+	<div class="form-group">
+    <button ng-show="checkUrl!==undefined" class="btn btn-primary"
+	ng-click="(myForm.reg_tabli.$valid)? 
+	function_details_vozila(vozila[checkUrl].reg_tabli,vozila[checkUrl].marka,vozila[checkUrl].model,vozila[checkUrl].boja,
+	vozila[checkUrl].vozac,vozila[checkUrl].vozilo_id,'update'):function_error()">EDIT</button>
+	
+	</div>
+	
+	
+	
+</form>

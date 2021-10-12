@@ -1,0 +1,73 @@
+#navigacija{
+    text-align: center;
+    background-color: black;
+    width:fit-content;
+    margin-left: 20px;
+    margin-top: 0;
+    
+}
+h1{
+    color:white;
+    font-family: sans-serif;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  font-family: sans-serif;
+}
+
+ul {
+  background:black;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  color: white;
+  background: black;
+  display: block;
+  float: left;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover {
+  background:rgb(155, 72, 223);
+  cursor: pointer;
+}
+
+ul li ul {
+  background: black;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}

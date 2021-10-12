@@ -1,0 +1,74 @@
+<h3>Нарачки</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!--<th>pozicija</th>-->
+			<th><input type="text" placeholder="Naracka ID"
+			name="searchByID" id="searchByID" ng-model="searchByID"></th>
+			<th><input type="text" placeholder="Datum"
+			name="searchByDate" id="searchByDate" ng-model="searchByDate"></th>
+			<th><input type="text" placeholder="Nacin plaka"
+			name="searchByPlaka" id="searchByPlaka" ng-model="searchByPlaka"></th>
+			<th><input type="text" placeholder="VoziloID"
+			name="searchByVozilo" id="searchByVozilo" ng-model="searchByVozilo"></th>
+			<th><input type="text" placeholder="Klient ID"
+			name="searchByKlID" id="searchByKlID" ng-model="searchByKlID"></th>
+			<th><input type="text" placeholder="Proizvod ID"
+			name="searchByProID" id="searchByProID" ng-model="searchByProID"></th>
+			<th><input type="text" placeholder="Kolicina"
+			name="searchByKolicina" id="searchByKolicina" ng-model="searchByKolicina"></th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="naracki in naracki |filter:{naracka_id:searchByID, naracka_datum:searchByDate, naracka_plaka:searchByPlaka,
+											vozilo_id:searchByVozilo, klient_id:searchByKlID, proizvod_id:searchByProID, kolicina:searchByKolicina}">
+			<!--<td>{{$index}}</td>-->
+			<td>{{naracki.naracka_id}}</td>
+			<td>{{naracki.naracka_datum}}</td>
+			<td>{{naracki.naracka_plaka}}</td>
+			<td>{{naracki.vozilo_id}}</td>
+			<td>{{naracki.klient_id}}</td>
+			<td>{{naracki.proizvod_id}}</td>
+			<td>{{naracki.kolicina}}</td>
+			<td><a href="#!details_naracki/{{$index}}"><i class="fa fa-edit"></i></a></td>
+			<td><button type="button" title="izbrisi"
+			class="btn btn-danger"
+			ng-click="function_getId($index)"
+			data-toggle="modal" 
+			data-target="#myModal">
+			<i class="fa fa-trash"></i></button></td>
+		</tr>
+		
+	</tbody>
+</table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger">
+        <h4 class="modal-title">Избриши нарачка</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      Дали сте сигурни дека сакате да ја избришете нарачката бр. {{naracki[getId].naracka_id}} ? 
+ 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="button" class="btn btn-danger" 
+		
+		ng-click="function_deleteRow('naracki',naracki[getId].naracka_id)">DELETE</button>
+        <button type="button" class="btn btn-warning" 
+		data-dismiss="modal">CANCEL</button>
+      </div>
+
+    </div>
+  </div>
+</div>

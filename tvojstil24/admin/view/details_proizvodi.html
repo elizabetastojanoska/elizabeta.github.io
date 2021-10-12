@@ -1,0 +1,71 @@
+<h3>Нов производ</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Успешно внесовте производ
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+<form name="myForm">
+	<div class="form-group">
+	<label for="proizvod_ime">Име на производ:</label>
+	<input type="text" class="form-control" placeholder="Име на производ"
+	name="proizvod_ime" id="proizvod_ime" ng-model="proizvodi[checkUrl].proizvod_ime"></input>
+	</div>
+	<input type="hidden" class="form-control" name="proizvod_id" id="proizvod_id" ng-model="proizvodi[checkUrl].proizvod_id">
+	
+	<div class="form-group">
+	<label for="proizvod_cena">Цена:</label>
+	<input type="text" class="form-control" placeholder="Цена"
+	name="proizvod_cena" id="proizvod_cena" ng-model="proizvodi[checkUrl].proizvod_cena"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_img">Слика:</label>
+	<input type="text" class="form-control" placeholder="Слика"
+	name="proizvod_img" id="proizvod_img" ng-model="proizvodi[checkUrl].proizvod_img"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_opis">Опис:</label>
+	<input type="text" class="form-control" placeholder="Опис"
+	name="proizvod_opis" id="proizvod_opis" ng-model="proizvodi[checkUrl].proizvod_opis"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_popust">Попуст:</label>
+	<input type="text" class="form-control" placeholder="Попуст"
+	name="proizvod_popust" id="proizvod_popust" ng-model="proizvodi[checkUrl].proizvod_popust"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_zaliha">Залиха:</label>
+	<input type="text" class="form-control" placeholder="Залиха"
+	name="proizvod_zaliha" id="proizvod_zaliha" ng-model="proizvodi[checkUrl].proizvod_zaliha"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="kategorija_id">Категорија:</label>
+	<select class="form-control" name="kategorija_id" id="kategorija_id" ng-model="proizvodi[checkUrl].kategorija_id">
+		<option ng-repeat="kategorii in kategorii" value="{{kategorii.kategorija_id}}">{{kategorii.kategorija_id}} ({{kategorii.kategorija_ime}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+	ng-click="(myForm.proizvod_ime.$valid)? 
+	function_details_proizvodi(proizvodi[checkUrl].proizvod_ime,proizvodi[checkUrl].proizvod_cena,proizvodi[checkUrl].proizvod_img,
+	proizvodi[checkUrl].proizvod_opis,proizvodi[checkUrl].proizvod_popust,proizvodi[checkUrl].proizvod_zaliha,proizvodi[checkUrl].kategorija_id,proizvodi[checkUrl].proizvod_id,'insert'):function_error()">SAVE</button>
+	
+	</div>
+	<div class="form-group">
+    <button ng-show="checkUrl!==undefined" class="btn btn-primary"
+	ng-click="(myForm.proizvod_ime.$valid)? 
+	function_details_proizvodi(proizvodi[checkUrl].proizvod_ime,proizvodi[checkUrl].proizvod_cena,proizvodi[checkUrl].proizvod_img,
+	proizvodi[checkUrl].proizvod_opis,proizvodi[checkUrl].proizvod_popust,proizvodi[checkUrl].proizvod_zaliha,proizvodi[checkUrl].kategorija_id,proizvodi[checkUrl].proizvod_id,'update'):function_error()">EDIT</button>
+	
+	</div>
+	
+	
+	
+</form>

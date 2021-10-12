@@ -1,0 +1,70 @@
+<h3>Нова нарачка</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Успешно внесовте нарачка
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+<form name="myForm">
+	<div class="form-group">
+	<label for="naracka_datum">Датум:</label>
+	<input type="text" class="form-control" placeholder="Датум"
+	name="naracka_datum" id="naracka_datum" ng-model="naracki[checkUrl].naracka_datum"></input>
+	</div>
+	<input type="hidden" class="form-control" name="naracka_id" id="naracka_id" ng-model="naracki[checkUrl].naracka_id">
+	
+	<div class="form-group">
+	<label for="naracka_plaka">Начин на плаќање:</label>
+	<input type="text" class="form-control" placeholder="Начин на плаќање"
+	name="naracka_plaka" id="naracka_plaka" ng-model="naracki[checkUrl].naracka_plaka"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="vozilo_id">Испорачана по:</label>
+	<select class="form-control" name="vozilo_id" id="vozilo_id" ng-model="naracki[checkUrl].vozilo_id">
+		<option ng-repeat="vozila in vozila" value="{{vozila.vozilo_id}}">{{vozila.vozilo_id}} ({{vozila.reg_tabli}} {{vozila.marka}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="klient_id">За клиент:</label>
+	<select class="form-control" name="klient_id" id="klient_id" ng-model="naracki[checkUrl].klient_id">
+		<option ng-repeat="klienti in klienti" value="{{klienti.klient_id}}">{{klienti.klient_id}} ({{klienti.klient_ime}} {{klienti.klient_prezime}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_id">Производ:</label>
+	<select class="form-control" name="proizvod_id" id="proizvod_id" ng-model="naracki[checkUrl].proizvod_id">
+		<option ng-repeat="proizvodi in proizvodi" value="{{proizvodi.proizvod_id}}">{{proizvodi.proizvod_id}} ({{proizvodi.proizvod_ime}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="kolicina">Количина:</label>
+	<input type="text" class="form-control" placeholder="Количина"
+	name="kolicina" id="kolicina" ng-model="naracki[checkUrl].kolicina"></input>
+	</div>
+	
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+	ng-click="(myForm.naracka_datum.$valid)? 
+	function_details_naracki(naracki[checkUrl].naracka_datum,naracki[checkUrl].naracka_plaka,
+	naracki[checkUrl].vozilo_id,naracki[checkUrl].klient_id,naracki[checkUrl].proizvod_id,naracki[checkUrl].kolicina,
+	naracki[checkUrl].naracka_id,'insert'):function_error()">SAVE</button>
+	
+	</div>
+	<div class="form-group">
+    <button ng-show="checkUrl!==undefined" class="btn btn-primary"
+	ng-click="(myForm.naracka_datum.$valid)? 
+	function_details_naracki(naracki[checkUrl].naracka_datum,naracki[checkUrl].naracka_plaka,
+	naracki[checkUrl].vozilo_id,naracki[checkUrl].klient_id,naracki[checkUrl].proizvod_id,naracki[checkUrl].kolicina,
+	naracki[checkUrl].naracka_id,'update'):function_error()">EDIT</button>
+	
+	</div>
+	
+	
+	
+</form>

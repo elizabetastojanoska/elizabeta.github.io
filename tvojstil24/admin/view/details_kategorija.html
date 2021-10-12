@@ -1,0 +1,33 @@
+<h3>Нова категорија</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Успешно внесовте категорија
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+<form name="myForm">
+	<div class="form-group">
+	<label for="model_name">Име на категорија:</label>
+	<input type="text" class="form-control" placeholder="Име на категорија"
+	name="kategorija_ime" id="kategorija_ime" ng-model="kategorii[checkUrl].kategorija_ime"></input>
+	</div>
+	<input type="hidden" class="form-control" name="kategorija_id" id="kategorija_id" ng-model="kategorii[checkUrl].kategorija_id">
+	
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+	ng-click="(myForm.kategorija_ime.$valid)? 
+	function_details_kategorii(kategorii[checkUrl].kategorija_ime,kategorii[checkUrl].kategorija_id,'insert'):function_error()">SAVE</button>
+	
+	</div>
+	<div class="form-group">
+    <button ng-show="checkUrl!==undefined" class="btn btn-primary"
+	ng-click="(myForm.kategorija_ime.$valid)? 
+	function_details_kategorii(kategorii[checkUrl].kategorija_ime,kategorii[checkUrl].kategorija_id,'update') :function_error()">EDIT</button>
+	
+	</div>
+	
+	
+	
+</form>

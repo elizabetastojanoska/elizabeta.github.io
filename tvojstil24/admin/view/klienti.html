@@ -1,0 +1,74 @@
+<h3>Клиенти</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!--<th>pozicija</th>-->
+			<th><input type="text" placeholder="ID на клиент"
+			name="searchByID" id="searchByID" ng-model="searchByID"></th>
+			<th><input type="text" placeholder="Име на клиент"
+			name="searchByName" id="searchByName" ng-model="searchByName"></th>
+			<th><input type="text" placeholder="Презиме на клиент"
+			name="searchBySurname" id="searchBySurname" ng-model="searchBySurname"></th>
+			<th><input type="text" placeholder="Град"
+			name="searchByTown" id="searchByTown" ng-model="searchByTown"></th>
+			<th><input type="text" placeholder="Адреса"
+			name="searchByAddress" id="searchByAddress" ng-model="searchByAddress"></th>
+			<th><input type="text" placeholder="Телефонски број"
+			name="searchByPhone" id="searchByPhone" ng-model="searchByPhone"></th>
+			<th><input type="text" placeholder="Email"
+			name="searchByEmail" id="searchByEmail" ng-model="searchByEmail"></th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="klienti in klienti |filter:{klient_id:searchByID,klient_ime:searchByName,klient_prezime:searchBySurname,
+													klient_grad:searchByTown,klient_adresa:searchByAddress,klient_tel_br:searchByPhone, klient_emal:searchByEmail}">
+			<td>{{klienti.klient_id}}</td>
+			<td>{{klienti.klient_ime}}</td>
+			<td>{{klienti.klient_prezime}}</td>
+			<td>{{klienti.klient_grad}}</td>
+			<td>{{klienti.klient_adresa}}</td>
+			<td>{{klienti.klient_tel_br}}</td>
+			<td>{{klienti.klient_email}}</td>
+			<td><a href="#!details_klienti/{{$index}}"><i class="fa fa-edit"></i></a></td>
+			<td><button type="button" title="izbrisi"
+			class="btn btn-danger"
+			ng-click="function_getId($index)"
+			data-toggle="modal" 
+			data-target="#myModal">
+			<i class="fa fa-trash"></i></button></td>
+		</tr>
+		
+	</tbody>
+</table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger">
+        <h4 class="modal-title">Избриши клиент</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      Дали сте сигурни дека сакате да го избришете клиентот {{klienti[getId].klient_ime}} {{klienti[getId].klient_prezime}}
+	   {{klienti[getId].klient_email}} ?
+ 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="button" class="btn btn-danger" 
+		
+		ng-click="function_deleteRow('klienti',klienti[getId].klient_id)">DELETE</button>
+        <button type="button" class="btn btn-warning" 
+		data-dismiss="modal">CANCEL</button>
+      </div>
+
+    </div>
+  </div>
+</div>

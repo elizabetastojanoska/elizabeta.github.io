@@ -1,0 +1,57 @@
+<h2>Категории</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<!--<th>pozicija</th>-->
+			<th>ID</th>
+			<th><input type="text" placeholder="Име на категорија"
+			name="searchByName" id="searchByName" ng-model="searchByName"></th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="kategorii in kategorii |filter:{kategorija_ime:searchByName}">
+			<!--<td>{{$index}}</td>-->
+			<td>{{kategorii.kategorija_id}}</td>
+			<td>{{kategorii.kategorija_ime}}</td>
+			<td><a href="#!details_kategorija/{{$index}}"><i class="fa fa-edit"></i></a></td>
+			<td><button type="button" title="izbrisi"
+			class="btn btn-danger"
+			ng-click="function_getId($index)"
+			data-toggle="modal" 
+			data-target="#myModal">
+			<i class="fa fa-trash"></i></button></td>
+		</tr>
+		
+	</tbody>
+</table>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger">
+        <h4 class="modal-title">IZBRISI KATEGORIJA</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       Dali ste sigurni {{kategorii[getId].kategorija_ime}}  
+ 
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="button" class="btn btn-danger" 
+		
+		ng-click="function_deleteRow('kategorii',kategorii[getId].kategorija_id)">DELETE</button>
+        <button type="button" class="btn btn-warning" 
+		data-dismiss="modal">CANCEL</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="col-sm-12 bg-info">
+<h3 class="pb-4 pt-2 text-white">Пополнете ги следните податоци:</h3>
+<div class="alert alert-success" ng-show="successAlert">
+Нарачката е примена. Откако ќе се процесира, ќе бидете контактирани.
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+Пополнете правилно
+</div>
+
+	<div class="row">
+	<div class="col-sm-6 bg-important text-white p-2" style="border:1px solid white;">
+<form name="myForm">
+	<div class="form-group">
+	<label for="naracka_datum">Датум:</label>
+	<input type="text" class="form-control" placeholder="Датум"
+	name="naracka_datum" id="naracka_datum" ng-model="naracki[checkUrl].naracka_datum"></input>
+	</div>
+	<input type="hidden" class="form-control" name="naracka_id" id="naracka_id" ng-model="naracki[checkUrl].naracka_id">
+	
+	<div class="form-group">
+	<label for="naracka_plaka">Начин на плаќање:</label>
+	<input type="text" class="form-control" placeholder="Начин на плаќање"
+	name="naracka_plaka" id="naracka_plaka" ng-model="naracki[checkUrl].naracka_plaka"></input>
+	</div>
+	
+	<div class="form-group">
+	<label for="vozilo_id">Испорачана по:</label>
+	<select class="form-control" name="vozilo_id" id="vozilo_id" ng-model="naracki[checkUrl].vozilo_id">
+		<option ng-repeat="vozila in vozila" value="{{vozila.vozilo_id}}">{{vozila.vozilo_id}} ({{vozila.reg_tabli}} {{vozila.marka}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="klient_id">За клиент:</label>
+	<select class="form-control" name="klient_id" id="klient_id" ng-model="naracki[checkUrl].klient_id">
+		<option ng-repeat="klienti in klienti" value="{{klienti.klient_id}}">{{klienti.klient_id}} ({{klienti.klient_ime}} {{klienti.klient_prezime}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="proizvod_id">Производ:</label>
+	<select class="form-control" name="proizvod_id" id="proizvod_id" ng-model="naracki[checkUrl].proizvod_id">
+		<option ng-repeat="proizvodi in proizvodi" value="{{proizvodi.proizvod_id}}">{{proizvodi.proizvod_id}} ({{proizvodi.proizvod_ime}})</option>
+	</select>
+	</div>
+	
+	<div class="form-group">
+	<label for="kolicina">Количина:</label>
+	<input type="text" class="form-control" placeholder="Количина"
+	name="kolicina" id="kolicina" ng-model="naracki[checkUrl].kolicina"></input>
+	</div>
+	
+	
+	<div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-dark"
+	ng-click="(myForm.naracka_datum.$valid)? 
+	function_details_naracki(naracki[checkUrl].naracka_datum,naracki[checkUrl].naracka_plaka,
+	naracki[checkUrl].vozilo_id,naracki[checkUrl].klient_id,naracki[checkUrl].proizvod_id,naracki[checkUrl].kolicina,
+	naracki[checkUrl].naracka_id,'insert'):function_error()">Нарачај</button>
+	
+	</div>
+	
+</form>
+</div><!--end of col-7-->
+<div class="col-sm-6 text-white pt-4">
+	<p>За да направите нарачка потребно е да сте веќе регистриран клиент.<br>
+	Доколку не сте регистрирани, кликнете овде</p>
+	<a href="#!details_klienti"><button class="btn btn-dark">Регистрирај се</button></a>
+</div>
+</div> <!--end of row-->
+</div>

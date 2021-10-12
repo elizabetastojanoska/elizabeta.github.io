@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <title>Земја</title>
+    <style>
+        #naslov{
+          font-family: sans-serif;
+          font-size: 40px;
+          text-align: center;
+        }
+        #zemjatekst{
+          font-family:sans-serif;
+          color:white;
+          font-size: 16px;
+          line-height: 1.5;
+          text-align: center;
+          width:100%;
+          
+        }
+      #satelit{
+        margin-left:0%;
+        margin-top:-50%;
+        position:relative;
+        animation-name:animacija;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+        animation-delay: 0;
+        
+
+      }
+
+      @keyframes animacija {
+        0% {
+            left:10%;
+            top:100px;
+        }
+        20% {
+          left:20%;
+          top:150px;
+        }
+        40% {
+          left:40%;
+          top:200px;
+        }
+        60% {
+          left:60%;
+          top:250px;
+        }
+        80% {
+          left:80%;
+          top:300px;
+        }
+        100%{
+          left:100%;
+          top:350px;
+        }
+      }
+        
+        
+    </style>
+</head>
+<body style="background-color: black;">
+    <div id="navigacija">
+        <h1>Сончев Систем</h1>
+    <nav role="navigation">
+        <ul>
+        <li><a href="../index.html">Почетна</a></li>
+          <li><a href="sonce.html">Сонце</a></li>
+          <li><a href="#">Планети</a>
+            <ul class="dropdown">
+              <li><a href="merkur.html">Меркур</a></li>
+              <li><a href="venera.html">Венера</a></li>
+              <li><a href="zemja.html">Земја</a></li>
+              <li><a href="mars.html">Марс</a></li>
+              <li><a href="jupiter.html">Јупитер</a></li>
+            </ul>
+          </li>
+          <li><a href="dzvezdi.html">Ѕвезди</a></li>
+          <li><a href="mesecina.html">Месечина</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="naslov">
+      <h1>Земја</h1>
+    </div>
+
+    <div>
+      <img src="../uploads/zemja3.jpg" alt="zemja" width="100%" height="100%">
+    </div>
+    <div id="zemjatekst">
+      <p>
+        Земјата — една од осумте планети во Сончевиот Систем. 
+        Таа е трета планета по оддалеченост од Сонцето и најголема со цврста површина, 
+        за разлика од гасовитите „џинови”. Планетата Земја има еден природен сателит, Месечината, 
+        и засега е единствената позната планета на која има живот. Во геологијата преовладува мислењето дека земјата е 
+        стара околу 4,6 милијарди години, што е потврдено со одредувањето на времето на полураспаѓање на ураниумот и ториумот. 
+       </p>
+    </div>
+    <div id="slika2">
+      <img src="../uploads/zemja4.jpg" alt="planeta zemja" width="100%" height="100%">
+    </div>
+    <div id="satelit">
+      <img src="../uploads/satelit.png" alt="satelit" width="20%" height="20%">
+    </div>
+    
+
+    
+</body>
+</html>
