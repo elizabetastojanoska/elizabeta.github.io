@@ -1,0 +1,22 @@
+body {
+    font-family:arial;
+    font-size:14px;
+    margin-top:15px;
+}
+
+.container {
+    border:1px solid blue;
+    width:40%;
+    padding-top:10px;
+    text-align: center;
+}
+input {
+    width:80%;
+    box-sizing: border-box;
+    height:40px;
+    
+}
+select {
+    width:80%;
+    height:40px;
+}
